@@ -13,6 +13,7 @@ namespace FamiStudio
         public static int DpiScaling = 0;
         public static int TimeFormat = 0;
         public static bool CheckUpdates = true;
+        public static int FollowSequencer = 0;
         public static bool TrackPadControls = false;
         public static bool ReverseTrackPad = false;
 
@@ -38,6 +39,7 @@ namespace FamiStudio
             CheckUpdates = ini.GetBool("UI", "CheckUpdates", true);
             TrackPadControls = ini.GetBool("UI", "TrackPadControls", false);
             ReverseTrackPad = ini.GetBool("UI", "ReverseTrackPad", false);
+            FollowSequencer = ini.GetInt("UI", "FollowSequencer", 0);
             InstrumentStopTime = ini.GetInt("Audio", "InstrumentStopTime", 2);
             MidiDevice = ini.GetString("MIDI", "Device", "");
             SquareSmoothVibrato = ini.GetBool("Audio", "SquareSmoothVibrato", true);
@@ -69,6 +71,7 @@ namespace FamiStudio
             ini.SetBool("UI", "CheckUpdates", CheckUpdates);
             ini.SetBool("UI", "TrackPadControls", TrackPadControls);
             ini.SetBool("UI", "ReverseTrackPad", ReverseTrackPad);
+            ini.SetInt("UI", "FollowSequencer", FollowSequencer);
             ini.SetInt("Audio", "InstrumentStopTime", InstrumentStopTime);
             ini.SetBool("Audio", "SquareSmoothVibrato", SquareSmoothVibrato);
             ini.SetString("MIDI", "Device", MidiDevice);
